@@ -11,6 +11,8 @@
 	"compileType": "miniprogram",
 	"appid": "wx41b8a1eb6f6d15b1",
 	"projectname": "AmuHome",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
