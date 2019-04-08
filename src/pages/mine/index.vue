@@ -3,7 +3,6 @@
   <div @click="clickHandle">
   <div>
   <i-avatar src="/static/images/user.png" size="large" shape="square" class='i-avatar'></i-avatar>
-  <i-cell title="我的订单" is-link url="/pages/logs/index"></i-cell>
   </div>
   </div>
 </template>
