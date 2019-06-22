@@ -1,8 +1,8 @@
 {
   "pages": [
     "pages/index/main",
-    "pages/logs/main",
-    "pages/counter/main",
+    "pages/map/main",
+    "pages/list/main",
     "pages/mine/main"
   ],
   "window": {
@@ -23,10 +23,10 @@
       "iconPath": "static/tabs/home.png",
       "selectedIconPath": "static/tabs/home-active.png"
     }, {
-      "text": "订单",
-      "pagePath": "pages/logs/main",
-      "iconPath": "static/tabs/orders.png",
-      "selectedIconPath": "static/tabs/orders-active.png"
+      "text": "地图",
+      "pagePath": "pages/map/main",
+      "iconPath": "static/tabs/map.png",
+      "selectedIconPath": "static/tabs/map-active.png"
     }, {
       "text": "我的",
       "pagePath": "pages/mine/main",
@@ -40,10 +40,10 @@
       "icon": "static/tabs/home.png",
       "activeIcon": "static/tabs/home-active.png"
     }, {
-      "name": "订单",
-      "pagePath": "pages/logs/main",
-      "icon": "static/tabs/orders.png",
-      "activeIcon": "static/tabs/orders-active.png"
+      "name": "地图",
+      "pagePath": "pages/map/main",
+      "icon": "static/tabs/map.png",
+      "activeIcon": "static/tabs/map-active.png"
     }],
     "position": "bottom"
   }
