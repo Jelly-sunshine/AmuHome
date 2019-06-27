@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "甜点",
+    "usingComponents": {
+        "i-card": "../../../static/dist/card/index"
+    }
+}

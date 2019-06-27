@@ -3,7 +3,17 @@
     "pages/index/main",
     "pages/map/main",
     "pages/list/main",
-    "pages/mine/main"
+    "pages/mine/main",
+    "pages/naicha/main",
+    "pages/mingcha/main",
+    "pages/sweetee/main",
+    "pages/fingerfood/main",
+    "pages/guocha/main",
+    "pages/guoliduo/main",
+    "pages/hongcha/main",
+    "pages/ice/main",
+    "pages/juice/main",
+    "pages/coffe/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
