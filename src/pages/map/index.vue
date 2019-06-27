@@ -8,9 +8,6 @@
 <script>
 
 export default {
-  components: {
-    card
-  },
 
   data () {
     return {
