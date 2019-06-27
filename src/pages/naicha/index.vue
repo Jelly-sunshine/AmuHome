@@ -2,12 +2,11 @@
 <template>
   <div>
      <div class="blank"></div>
-    <i-card v-for="item in action" :key="item" :title="item.carNum" :extra="'价格：'+item.price">
+      <i-card i-class="re_card" v-for="item in action" :key="item" :title="item.name" :extra="item.price" :thumb="item.image">
         <view slot="content">温度：{{item.temperature}}
-          <i-button i-class="re_button" @click="handleClick(item,index)" type="info" size="small">点击预约</i-button>
         </view>
         <view slot="footer">甜度：{{item.sweet}}</view>
-    </i-card>
+      </i-card>
     </div>
 
    
@@ -21,18 +20,34 @@
    
     data() {
       return {
-        userInfo: {
+          name:'',
           price:'',
           temperature:'',
-          sweet:''
+          sweet:'',
+          image:'',
+          action:[{
+            name:'奶茶1',
+            price:'38元一杯',
+            temperature:'20°',
+            sweet:'高糖',
+            image:'/static/images/milkTea.png'
+          },{
+            name:'奶茶2',
+            price:'26元一杯',
+            temperature:'23°',
+            sweet:'低糖',
+            image:'/static/images/fruit.png'
+          }]
         }
-      }
     }
   }
 
 </script>
 
-<style>
+<style scoped>
+  div >>> .re_card{
+    margin-top:5px;
+  }
   .blank{
     display:block;
     width:100%;

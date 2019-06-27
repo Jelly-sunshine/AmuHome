@@ -29,7 +29,7 @@
     },
     methods: {
     toHome(){
-      if(this.username=='admin'||this.userpassword=='123'){
+      if(this.username=='admin'&&this.userpassword=='123'){
           wx.switchTab({
           url: '/pages/index/main'
         })
