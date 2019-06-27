@@ -1,55 +1,60 @@
 
 <template>
-  <div @click="clickHandle">
   <div>
-  <i-avatar src="/static/images/user.png" size="large" shape="square" class='i-avatar'></i-avatar>
-  </div>
-  </div>
+      <view class="userinfo">
+      <view class="userinfo-avatar">
+      <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <open-data class="userinfo-nickname" type="userNickName"></open-data>
+      </view>
+
+      <i-cell-group>
+          <i-cell title="登录" is-link url="/pages/login/main"></i-cell>
+          <i-cell title="我的订单" is-link url="/pages/map/main"></i-cell>
+      </i-cell-group>
+    </div>
+
+   
+
 </template>
 
 <script>
-import card from '@/components/card'
+  
 
-export default {
-  data () {
-    return {
-      motto: 'Hello miniprograme',
-      userInfo: {
+  export default {
+   
+    data() {
+      return {
+        userInfo: {
         nickName: 'mpvue',
         avatarUrl: 'http://mpvue.com/assets/logo.png'
+        }
       }
     }
-  },
-
-  components: {
-    card
-  },
-
-  methods: {
-    bindViewTap () {
-      const url = '../logs/main'
-      if (mpvuePlatform === 'wx') {
-        mpvue.switchTab({ url })
-      } else {
-        mpvue.navigateTo({ url })
-      }
-    },
-    clickHandle (ev) {
-      console.log('clickHandle:', ev)
-      // throw {message: 'custom test'}
-    }
-  },
-
-  created () {
-    // let app = getApp()
   }
-}
+
 </script>
 
-<style scoped>
-.i-avatar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+<style>
+  .userinfo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f76a24;
+  }
+
+  .userinfo-avatar {
+    width: 128rpx;
+    height: 128rpx;
+    margin-top: 10rpx;
+    border-radius: 50%;
+    clip-path: circle(64rpx at center);
+  }
+
+  .userinfo-nickname {
+    color: #fff;
+    padding: 5px;
+  }
 </style>
+
