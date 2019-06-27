@@ -1,18 +1,11 @@
 <template>
-  <div>
-    <view class="top-padding">
-    <view v-for="item in commdity" :key='item' class="top-padding">
-    <i-card title="item.name" extra="item.price" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
-    <view slot="content">{{item.remark}}</view>
-    <view slot="footer">尾部内容</view>
-    </i-card>
-    </view>
-    </view>
+  <div class="map">
+   <map id="map" longitude="113.324520" latitude="23.099994" scale="14" controls="controls" bindcontroltap="controltap" markers="markers" bindmarkertap="markertap" polyline="polyline" bindregionchange="regionchange" show-location style="width: 100%; height: 600px;"></map>
+
   </div>
 </template>
 
 <script>
-import card from '@/components/card'
 
 export default {
   components: {
@@ -21,30 +14,56 @@ export default {
 
   data () {
     return {
-      commodity: []
+      markers: [{
+      iconPath: "/resources/others.png",
+      id: 0,
+      latitude: 23.099994,
+      longitude: 113.324520,
+      width: 50,
+      height: 50
+    }],
+    polyline: [{
+      points: [{
+        longitude: 113.3245211,
+        latitude: 23.10229
+      }, {
+        longitude: 113.324520,
+        latitude: 23.21229
+      }],
+      color:"#FF0000DD",
+      width: 2,
+      dottedLine: true
+    }],
+    controls: [{
+      id: 1,
+      iconPath: '/resources/location.png',
+      position: {
+        left: 0,
+        top: 300 - 50,
+        width: 50,
+        height: 50
+      },
+      clickable: true
+    }]
     }
   },
-
-  created () {
-    const db = wx.cloud.database({ env: 'amuhome-0c79b8' })
-    db.collection('commodity').get().then(
-      res => {
-        console.log(res.data)
-        this.commodity = res.data
-      }
-    )
+  methods:{
+      regionchange(e) {
+      console.log(e.type)
+    },
+    markertap(e) {
+      console.log(e.markerId)
+    },
+    controltap(e) {
+      console.log(e.controlId)
+    }
   }
 }
 </script>
 
 <style>
-.log-list {
-  display: flex;
-  flex-direction: column;
-  padding: 40rpx;
+.class{
+  height:100%;
 }
 
-.log-item {
-  margin: 10rpx;
-}
 </style>
